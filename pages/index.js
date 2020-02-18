@@ -4,6 +4,7 @@ import Layout from '../components/layout'
 import fetch from 'isomorphic-unfetch'
 
 
+
 const Home=({date,monies})=>{
   <Head>
 
@@ -11,10 +12,12 @@ const Home=({date,monies})=>{
 
 return(
 
-  <Layout>
+  <Layout >
+      <div>
     {date}
     <br></br>
     {monies}
+    </div>
   </Layout>
 
 )
