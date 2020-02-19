@@ -5,7 +5,7 @@ import fetch from 'isomorphic-unfetch'
 
 
 
-const Home=({date,monies})=>{
+const Home=({monies})=>{
   <Head>
 
   </Head>
@@ -14,8 +14,6 @@ return(
 
   <Layout >
       <div>
-    {date}
-    <br></br>
     {monies}
     </div>
   </Layout>
@@ -26,12 +24,16 @@ return(
 }
 
 Home.getInitialProps=async()=>{
-  const res = await fetch(`http://data.fixer.io/api/latest?access_key=3271d47901f06517e972113fca920187`)
-  const json = await res.json()
-  return {
-    date: json.date,
-    monies: Object.entries(json.rates)
+  const res = await fetch(`http://data.fixer.io/api/latest?access_key=3271d47901f06517e972113fca920187`);
+  const json = await res.json();
+  return{
+      monies: JSON.stringify(json)
   }
+    
 
-}
+    }
+
+  
+
+
 export default Home
