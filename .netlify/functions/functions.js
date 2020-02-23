@@ -7,10 +7,11 @@ exports.handler = async(event, context)=>{
    .then(response => response.json())
    .then(data =>({
        statusCode:200,
-       body: data.rates
+       body: JSON.stringify({
+           data: data.rates
+       })
        
-   })
-   .then(res.send(data)))
+   }))
    .catch(error =>({ statusCode: 422, body:String(error)}))
     
 }
