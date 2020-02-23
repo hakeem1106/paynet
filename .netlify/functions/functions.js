@@ -1,7 +1,7 @@
 require('dotenv').config();
 const fetch = require('node-fetch')
 
-exports.handler = async(event, context)=>{
+exports.handler = async(event, context, callback)=>{
 
    fetch(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`, {headers:{ "Accept": "application/json"}})
    .then(response => response.json())
