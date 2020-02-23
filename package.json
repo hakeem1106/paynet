@@ -5,7 +5,9 @@
   "scripts": {
     "dev": "node ./server/server.js",
     "build": "next build",
-    "start": "node ./server/server.js"
+    "start": "node ./server/server.js",
+    "lambda-serve": "netlify-lambda serve ./.netlify/functions",
+    "lambda-build": "netlify-lambda build ./.netlify/functions"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
@@ -13,6 +15,7 @@
     "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "isomorphic-unfetch": "^3.0.0",
+    "netlify-lambda": "^1.6.3",
     "next": "9.2.1",
     "node-sass": "^4.13.1",
     "react": "16.12.0",
