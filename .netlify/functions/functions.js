@@ -4,7 +4,7 @@ const fetch = require('isomorphic-unfetch')
 exports.handler = (event, context, callback)=>{
 
     const send = body =>{
-        callback(nul, {
+        callback(null, {
             statuCode:200,
             body: JSON.stringify(body)
         })
