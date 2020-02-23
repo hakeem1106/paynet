@@ -9,8 +9,7 @@ exports.handler = async(event, context)=>{
        statusCode:200,
        body: data.rates
        
-   }),
-   console.log(body))
+   }))
    .catch(error =>({ statusCode: 422, body:String(error)}))
     
 }
