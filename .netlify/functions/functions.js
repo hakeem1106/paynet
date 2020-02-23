@@ -8,8 +8,9 @@ exports.handler = async(event, context)=>{
    .then(data =>({
        statusCode:200,
        body: data.rates
-   }))
-   .then(console.log(body))
+       
+   }),
+   console.log(body))
    .catch(error =>({ statusCode: 422, body:String(error)}))
     
 }
