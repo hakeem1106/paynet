@@ -11,6 +11,6 @@ exports.handler = (event, context, callback)=>{
     }
    
     const res = fetch(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
-    const data = res.json()
+    const data = res
     console.log(data)
 }
