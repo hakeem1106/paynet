@@ -4,8 +4,9 @@ const axios = require('axios')
 
 exports.handler = async(event, context, callback)=>{
 
-   await axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
-    .then(({data:{ data: rates}})=>{
+    getRates =async()=>{
+        await axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
+    .then(({data: rates})=>{
         callback(null,{
             statusCode:200,
             headers:{
@@ -16,5 +17,8 @@ exports.handler = async(event, context, callback)=>{
         })
     })
     .catch(err=> console.log(err))
+
+    }
+   getRates()
     
 }

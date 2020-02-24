@@ -14,7 +14,7 @@ return(
 
   <Layout >
       <div>
-    
+      blank text for now
     </div>
   </Layout>
 
