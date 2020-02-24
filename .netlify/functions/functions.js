@@ -9,11 +9,10 @@ exports.handler = async(event, context, callback)=>{
         callback(null,{
             statusCode:200,
             headers:{
-                "Access-Control-Allow-Origin" : "*",
-                "Access-Control-Allow-Headers": "Content-Type",
+
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(rates)
+            body: JSON.stringify(data.rates)
         })
     })
     .catch(err=> console.log(err))
