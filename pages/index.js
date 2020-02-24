@@ -5,20 +5,31 @@ import fetch from 'isomorphic-unfetch'
 
 
 
-const Home=()=>{
-  <Head>
+class Home extends React.Component{
+constructor(props){
+    super(props)
+    this.state={}
+}
+
+fetchRates = async()=>{
+    await (await fetch(`./.netlify/functions/getRates`))
+}
+
+ render(){
+
+return(
+     <Head>
 
   </Head>
 
-return(
-
   <Layout >
       <div>
-      blank text for now
+      {fetchRates().then}
     </div>
   </Layout>
 
 )
+}
 
 
 }

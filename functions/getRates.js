@@ -3,6 +3,7 @@ const axios = require('axios')
 
 
 exports.handler = (event, context, callback)=>{
+    
 
    axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
     .then(({data:{ data: rates}})=>{
