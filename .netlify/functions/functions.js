@@ -1,22 +1,21 @@
 require('dotenv').config();
-const fetch = require('isomorphic-unfetch')
+const axios = require('axios')
+
 
 exports.handler = (event, context, callback)=>{
 
-    const send = body =>{
-        callback(null, {
-            statuCode:200,
-            body: JSON.stringify(body)
+   axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
+    .then(({data:{ data: rates}})=>{
+        callback(null,{
+            statusCode:200,
+            headers:{
+                "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Headers": "Content-Type",
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(rates)
         })
-    }
-   
-    const getRates =()=>{
-        fetch(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
-        .then(res => send(res))
-        console.log(res)
-
-    }
-
-    getRates()
+    })
+    .catch(err=> console.log(err))
     
 }
