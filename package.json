@@ -6,8 +6,8 @@
     "dev": "node ./server/server.js",
     "build": "next build",
     "start": "node ./server/server.js",
-    "lambda-serve": "netlify-lambda serve ./.netlify/functions",
-    "lambda-build": "netlify-lambda build ./.netlify/functions"
+    "lambda-serve": "netlify-lambda serve functions",
+    "lambda-build": "netlify-lambda build functions"
   },
   "dependencies": {
     "@zeit/next-sass": "^1.0.1",
