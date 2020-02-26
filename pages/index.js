@@ -15,7 +15,7 @@ fetchRates = async()=>{
     await (await fetch(`./.netlify/functions/getRates`))
     .then(res => res.json())
     .then(res => this.setState({
-      rates: JSON.stringify(res.rates)
+      rates: res.rates
     }))
 }
 
