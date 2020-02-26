@@ -3,12 +3,10 @@ const axios = require('axios')
 
 
 exports.handler = async(event, context, callback)=>{
-
     
     getRates= async()=>{
-        const parsedBody = JSON.parse(event.body)
         axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
-    .then(({data:{ rates: parsedBody}})=>{
+    .then(({data:{ data: rates}})=>{
         callback(null,{
             statusCode:200,
             headers:{
@@ -16,7 +14,7 @@ exports.handler = async(event, context, callback)=>{
                 "Access-Control-Allow-Headers": "Content-Type",
                 'content-type': 'application/json'
             },
-            body: rates
+            body: data
         })
     })
     .catch(err=> console.log(err))
