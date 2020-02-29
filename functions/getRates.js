@@ -21,6 +21,7 @@ exports.handler = async(event, context, callback)=>{
     const getRates = async()=>{
        await axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
        .then(res=> send(res.data))
+       .then(console.log(res))
         .catch(err => send(err))
         
         

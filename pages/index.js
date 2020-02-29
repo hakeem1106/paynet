@@ -12,7 +12,7 @@ constructor(props){
 }
 
 fetchRates = async()=>{
-    await (await fetch(`./.netlify/functions/getRates`))
+    await (fetch(`/.netlify/functions/getRates`))
     .then(res => res.json())
     .then(res => this.setState({
       rates: res.rates
