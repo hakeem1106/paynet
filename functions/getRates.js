@@ -9,7 +9,8 @@ exports.handler = async(event, context, callback)=>{
             headers: {
                 "Access-Control-Allow-Origin" : "*",
                 "Access-Control-Allow-Headers": "Content-Type",
-                'content-type': 'application/json'
+                'content-type': 'application/json',
+                "Accept": "application/json"
             },
             body: JSON.stringify({
                 data: body
