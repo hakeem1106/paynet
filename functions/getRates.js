@@ -6,15 +6,7 @@ exports.handler = async(event, context, callback)=>{
     const send = body=>{
        return callback(null, {
             statusCode: 200,
-            headers: {
-                "Access-Control-Allow-Origin" : "*",
-                "Access-Control-Allow-Headers": "Content-Type",
-                'content-type': 'application/json',
-                "Accept": "application/json"
-            },
-            body: JSON.stringify({
-                data: body
-            })
+            body: JSON.stringify(body)
         
         }) 
 
