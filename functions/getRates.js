@@ -4,7 +4,7 @@ const axios = require('axios').default
 
 exports.handler = async(event, context, callback)=>{
     const send = body=>{
-        callback(null, {
+       return callback(null, {
             statusCode: 200,
             headers: {
                 "Access-Control-Allow-Origin" : "*",
