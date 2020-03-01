@@ -25,9 +25,9 @@ exports.handler = async(event, context, callback)=>{
         
         
     }
-    if(event.httpMethod == 'GET'){
+    
         getRates()
-    }
+    
     
     
       
