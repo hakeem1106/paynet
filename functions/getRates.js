@@ -11,7 +11,7 @@ exports.handler = async(event, context, callback)=>{
                 "Access-Control-Allow-Headers": "Content-Type",
                 'content-type': 'application/json'
             },
-            body: JSON.stringify(body)
+            body: JSON.stringify(res.data)
         
         }) 
 
