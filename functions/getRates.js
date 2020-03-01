@@ -2,15 +2,21 @@ require('dotenv').config();
 const axios = require('axios').default
 
 
-exports.handler = async(event, context, callback)=>{
+exports.handler = async(event, context)=>{
     const send = body=>{
         console.log(event)
         console.log(context)
-       callback(null, {
+       return {
             statusCode: 200,
+            headers: {
+                 "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Headers": "Content-Type",
+                'content-type': 'application/json'
+            },
             body: JSON.stringify(body)
         
-        }) 
+        }
+        
 
     }
 
