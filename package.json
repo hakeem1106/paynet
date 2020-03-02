@@ -5,6 +5,7 @@
   "scripts": {
     "dev": "node ./server/server.js",
     "build": "next build",
+    "export": "next export",
     "start": "node ./server/server.js",
     "lambda-serve": "netlify-lambda serve functions",
     "lambda-build": "netlify-lambda build functions"
