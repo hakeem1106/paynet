@@ -9,17 +9,22 @@ class Home extends React.Component{
 constructor(props){
     super(props)
     this.state={
-
+      rates:[]
       
     }
+    this.fetchRates = this.fetchRates.bind(this)
 }
 
 
 
 fetchRates = async(event)=>{
     await (fetch(`/.netlify/functions/getRates`))
-    .then(res => res.json())
-    .then(JSON.stringify(res))
+    .then(res => await res.json())
+    .then(this.setState({
+        rates: [{
+          monies: res.rates
+        }]
+    }))
     
 }
 
@@ -30,8 +35,8 @@ return(
 
 
   <Layout>
-      <div>
-      {this.fetchRates(event)}
+      <div onLoad={this.fetchRates}>
+      {this.state.rates}
       </div>
       
     
