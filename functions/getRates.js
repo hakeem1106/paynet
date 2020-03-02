@@ -15,15 +15,18 @@ exports.handler = async(event, context)=>{
             },
             body: JSON.stringify(body)
         
-        }, 
-        console.log(body)
-        
+        } 
+    
 
     }
 
     const getRates = async()=>{
        await axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
        .then(res=> send(res.data))
+       .then(p = document.createTextNode(send(res.data),
+            r = document.createElement('h1'),
+            r.appendChild(p)
+        ))
         .catch(err => send(err))
     }
 
