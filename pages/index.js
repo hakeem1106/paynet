@@ -36,7 +36,7 @@ return(
 
   <Layout>
       <div onLoad={this.fetchRates}>
-      {this.state.rates}
+      {this.state.rates.monies}
       </div>
       
     
