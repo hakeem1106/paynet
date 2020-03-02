@@ -9,23 +9,18 @@ class Home extends React.Component{
 constructor(props){
     super(props)
     this.state={
-      rates: 
-      <div>
-        Starter data
-      </div>
+      rates: new this.fetchRates() 
+      
     }
 }
+
+
 
 fetchRates = async(event)=>{
     await (fetch(`/.netlify/functions/getRates`))
     .then(res => res.json())
-    .then(res => this.setState({
-      rates: 
-      <div>
-      {res.rates}
-      </div>
-      
-    }))
+    .then(JSON.stringify(res))
+    
 }
 
 
