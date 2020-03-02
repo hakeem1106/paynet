@@ -1,0 +1,6 @@
+
+
+# Next-on-Netlify Redirects
+/index  /_next/pages/index.html  200
+/  /_next/pages/index.html  200
+/_error  /.netlify/functions/nextRouter?_path=/_error  200
