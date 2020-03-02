@@ -9,7 +9,7 @@ class Home extends React.Component{
 constructor(props){
     super(props)
     this.state={
-      rates: new fetchRates() 
+
       
     }
 }
@@ -31,7 +31,7 @@ return(
 
   <Layout>
       <div>
-      {this.state.rates}
+      {this.fetchRates(event)}
       </div>
       
     
