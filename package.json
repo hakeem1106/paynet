@@ -4,7 +4,7 @@
   "private": true,
   "scripts": {
     "dev": "node ./server/server.js",
-    "build": "next build",
+    "build": "npm run lambda-build && next build",
     "export": "next export",
     "start": "node ./server/server.js",
     "lambda-serve": "netlify-lambda serve functions",
