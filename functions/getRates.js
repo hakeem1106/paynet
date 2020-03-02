@@ -9,13 +9,14 @@ exports.handler = async(event, context)=>{
        return {
             statusCode: 200,
             headers: {
-                 "Access-Control-Allow-Origin" : "*",
+                "Access-Control-Allow-Origin" : "*",
                 "Access-Control-Allow-Headers": "Content-Type",
                 'content-type': 'application/json'
             },
             body: JSON.stringify(body)
         
-        }
+        }, 
+        console.log(body)
         
 
     }
