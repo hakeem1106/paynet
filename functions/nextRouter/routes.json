@@ -1,8 +1,0 @@
-{
-  "routes": [
-    {
-      "file": "pages/_error.js",
-      "regex": "^\\/_error(?:\\/)?$"
-    }
-  ]
-}
