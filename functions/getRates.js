@@ -9,8 +9,9 @@ exports.handler = async(event, context)=>{
        return {
             statusCode: 200,
             headers: {
-                "Access-Control-Allow-Headers": "Content-Type",
-                'content-type': 'application/json'
+                "Content-Type": 'application/json',
+                "Accept": 'application/json'
+                
             },
             body: JSON.stringify(body)
         
