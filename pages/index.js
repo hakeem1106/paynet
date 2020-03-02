@@ -19,7 +19,7 @@ constructor(props){
 
 fetchRates = async(event)=>{
     await (fetch(`/.netlify/functions/getRates`))
-    .then(res => await res.json())
+    .then(res => res.json())
     .then(this.setState({
         rates: [{
           monies: res.rates
