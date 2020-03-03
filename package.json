@@ -3,10 +3,10 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
-    "dev": "node ./server/server.js",
+    "dev": "next",
     "build": "npm run lambda-build && next build",
     "export": "next export",
-    "start": "node ./server/server.js",
+    "start": "next start",
     "lambda-serve": "netlify-lambda serve functions",
     "lambda-build": "netlify-lambda build functions"
   },

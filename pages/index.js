@@ -24,7 +24,7 @@ fetchRates = async(event)=>{
     .then(res => res.json())
     .then(this.setState({
         rates: [{
-          monies: res.rates
+          
         }]
     }))
     
