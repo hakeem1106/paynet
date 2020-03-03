@@ -15,7 +15,9 @@ constructor(props){
     this.fetchRates = this.fetchRates.bind(this)
 }
 
-
+async componentDidMount(){
+  this.fetchRates()
+}
 
 fetchRates = async(event)=>{
     await (fetch(`/.netlify/functions/getRates`))
