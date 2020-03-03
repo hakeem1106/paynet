@@ -2,7 +2,7 @@ require('dotenv').config();
 const axios = require('axios').default
 
 
-exports.handler = async(event, context)=>{
+exports.handler = (event, context)=>{
     const send = body=>{
         console.log(event)
         console.log(context)
@@ -24,10 +24,7 @@ exports.handler = async(event, context)=>{
        await axios.get(`http://data.fixer.io/api/latest?access_key=${process.env.API_KEY}`)
        .then(res=> send(res.data))
         .catch(err => send(err))
-        
-        let r = document.createElement('h1')
-        let p = document.createTextNode(send(res.data))
-            r.appendChild(p)
+    
     }
 
     
