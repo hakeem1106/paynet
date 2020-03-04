@@ -2,7 +2,7 @@ require('dotenv').config();
 const axios = require('axios').default
 
 
-exports.handler = (event, context)=>{
+exports.handler.getrates = (event, context)=>{
     const send = body=>{
         console.log(event)
         console.log(context)

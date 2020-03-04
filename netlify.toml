@@ -1,4 +1,6 @@
 [build]
-    command = "cd ./functions; npm install; cd ../ ; npm run build; npm run export"
+    command = "npm install -g; npm run build; npm run export"
     publish = "out"
     functions = "lambda"
+    functions: 
+            handler: handler.getrates
